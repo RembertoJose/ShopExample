@@ -11,7 +11,7 @@ import SwiftUI
 struct DownTime_ShopApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LandingPage()
         }
     }
 }

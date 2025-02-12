@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ItemView: View {
-    @State var imageURL: String = "https://www.foundations.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/f/o/foundations-little-scholars-kids-school-chairs-12-in-seat-height_main_1.jpg"
+    @State var imageURL: String = "https://images.thdstatic.com/productImages/1b7cf221-cee1-43c4-a021-619b04792c2c/svn/brown-american-furniture-classics-accent-chairs-8501-10-d4_600.jpg"
     @State var itemName: String = "Name"
     @State var itemPrice: String = "100.00"
     @State var stars: Int = 1
@@ -22,9 +22,10 @@ struct ItemView: View {
                     AsyncImage(url: URL(string: imageURL)){ result in
                         result.image?
                             .resizable()
-                            .scaledToFill()
+                            .scaledToFit()
+                            .frame(width: 230, height: 250)
+                            .cornerRadius(25)
                     }
-                    .frame(width: 100, height: 250)
                 }
                 VStack(alignment: .leading) {
                     Text(itemName)
