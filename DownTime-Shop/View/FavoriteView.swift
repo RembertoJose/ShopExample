@@ -8,8 +8,16 @@
 import SwiftUI
 
 struct FavoriteView: View {
+    @State private var selectedTab: Tabs = .favorites
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            TabBarView(selectedTab: $selectedTab)
+                .padding(.top, 730)
+        }
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+        .background(Color.init(uiColor: UIColor.secondarySystemBackground))
     }
 }
 
